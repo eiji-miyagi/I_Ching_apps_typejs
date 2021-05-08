@@ -21,6 +21,12 @@ Route::get('/', function () {
 Route::get('/i_ching', 'App\Http\Controllers\i_chingController@index');
 
 
+// 以下ページごとにルート設定しないと表示されない。解決まで暫定処置。問題なければそのまま
+Route::get('/result', 'App\Http\Controllers\i_chingController@result');
+
+
+Route::get('/history', 'App\Http\Controllers\i_chingController@history');
+
 // HTTPS接続でアセット(CSSや画像など)を読み込むための処理
 if (env('APP_ENV') === 'local') {
     URL::forceScheme('https');
