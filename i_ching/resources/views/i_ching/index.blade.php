@@ -1,7 +1,8 @@
 
 @section('content')
 
-    <image>ここに画像を入れる</image>
+    <img src= "{{ asset('resources/img/gif/top.gif' )}}" alt= "トップイメージ"></img>
+    
 
 
     <p>易経占いとは</p>
