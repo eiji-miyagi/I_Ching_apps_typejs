@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,18 +14,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+// インデックへのルート作成,/i_chingでコントローラーのindexの処理に渡す
+Route::get('/i_ching', 'i_chingController@index');
 
-// インデックへのルート作成,/i_chingでコントローラーのindexの処理に渡す、laravelバージョン８以上により位置を詳細に指定
-Route::get('/i_ching', 'App\Http\Controllers\i_chingController@index');
+Route::get('/result', 'i_chingController@result');
 
+Route::get('/history', 'i_chingController@history');
 
-// 以下ページごとにルート設定しないと表示されない。解決まで暫定処置。問題なければそのまま
-Route::get('/result', 'App\Http\Controllers\i_chingController@result');
-
-
-Route::get('/history', 'App\Http\Controllers\i_chingController@history');
-
-// HTTPS接続でアセット(CSSや画像など)を読み込むための処理
+// HTTPS接続でアセット(CSSや画像など)を読み込むための処理「https」だとcss,画像ファイル読めない。使用サーバー由来と思われるが、デプロイ時に問題になる可能性あり
 if (env('APP_ENV') === 'local') {
-    URL::forceScheme('https');
- } 
+     URL::forceScheme('http');
+}

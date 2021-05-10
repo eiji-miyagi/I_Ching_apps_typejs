@@ -1,10 +1,10 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
-class CreateIChingsTable extends Migration
+class CreateOraclesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class CreateIChingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('kejitbl', function (Blueprint $table) {
-            $table->id();
+        Schema::create('oracles', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->text('keji_name');
             $table->text('keji_detail');
             $table->text('keji1_img_path');
@@ -22,6 +22,7 @@ class CreateIChingsTable extends Migration
             $table->timestamps();
         });
 
+       
         // テーブルkojiを追加
         Schema::create('koji_tbl', function (Blueprint $table) {
             $table->id();
@@ -32,11 +33,11 @@ class CreateIChingsTable extends Migration
 
         Schema::create('history_tbl', function (Blueprint $table) {
             $table->id();
+            $table->text('question');
             $table->text('keji_no');
             $table->text('koji_no');
             $table->timestamps('create_date');
         });
-
     }
 
     /**
@@ -46,6 +47,6 @@ class CreateIChingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('i_chings');
+        Schema::dropIfExists('oracles');
     }
 }
