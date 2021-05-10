@@ -22,7 +22,7 @@
         </ul>
 
         <p>では、占うテーマを選んでボタンを押してください</p>
-     <form>
+     <form　method="POST" action="">
             <!-- 選択されたvalueを送る -->
          <select class="form-control mb-2" required>
                 <option value="仕事">仕事</option>
@@ -37,8 +37,9 @@
             <br> 
             <!-- ランダムの数字を送るボタン -->
 
-        <button   class="btn btn-primary" type="submit">占う</button>
+        <button class="btn btn-primary">占う</button>
 
        
      </form>
+     
 @endsection

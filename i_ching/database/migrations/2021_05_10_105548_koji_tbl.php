@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOraclesTable extends Migration
+class KojiTbl extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,13 @@ class CreateOraclesTable extends Migration
      */
     public function up()
     {
-        Schema::create('oracles', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->text('keji_name');
-            $table->text('keji_detail');
-            $table->text('keji1_img_path');
-            $table->text('keji2_img_path');
+         // テーブルkojiを追加
+        Schema::create('koji_tbl', function (Blueprint $table) {
+            $table->id();
+            $table->text('oracles_id');
+            $table->text('koji_detail');
             $table->timestamps();
         });
-
-       
-      
     }
 
     /**
@@ -33,6 +29,6 @@ class CreateOraclesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('oracles');
+        //
     }
 }

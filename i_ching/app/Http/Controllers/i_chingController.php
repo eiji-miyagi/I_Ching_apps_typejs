@@ -15,18 +15,19 @@ class i_chingController extends Controller
     public function index()
     {
         return view('i_ching.index');
+        $oracle=rand(1,384);
     }
-
+// /historyにquesiton,time,らない結果noを送る
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function result()
+    public function result(Request $hogehoge)
     {
-         return view('i_ching.result');
+        return view('i_ching.result');
     }
-
+// /oraclesから画像パス１画像パス２　テキスト１　/kojiからテキストデータを受け取る
     // * Show the form for creating a new resource.
     // *
     // * @return \Illuminate\Http\Response
