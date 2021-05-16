@@ -17,7 +17,7 @@ class i_chingController extends Controller
         return view('i_ching.index');
         $oracle=rand(1,384);
     }
-// /historyにquesiton,time,らない結果noを送る
+// /historyにquesiton,time,結果noを送る
     /**
      * Show the form for creating a new resource.
      *
