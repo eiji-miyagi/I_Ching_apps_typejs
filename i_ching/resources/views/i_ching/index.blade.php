@@ -3,6 +3,7 @@
 
 @section('title', 'i_Ching')
 @section('content')
+<body>
 
     <img src= "{{ asset('/img/gif/top.gif')}}" alt= "トップイメージ" class="d-block mx-auto">
 
@@ -22,24 +23,25 @@
         </ul>
 
         <p>では、占うテーマを選んでボタンを押してください</p>
-     <form　method="POST" action="">
-            <!-- 選択されたvalueを送る -->
-         <select class="form-control mb-2" required>
+
+        <form method="POST" action="/result/{{rand(1,384)}}">
+            @csrf
+            <select name= 'question'class="form-control mb-2" required>
                 <option value="仕事">仕事</option>
                 <option value="恋愛">恋愛</option>
                 <option value="行動">行動</option>
                 <option value="商売">商売</option>
                 <option value="健康">仕事</option>
                 <option value="学業">学業</option>
-         </select>
+         </select> 
 
-
-            <br> 
-            <!-- ランダムの数字を送るボタン -->
-
-        <button class="btn btn-primary">占う</button>
+           
+            <input type="submit" value="占う"class="btn btn-primary">
+        </form>
+    
 
        
-     </form>
+
+</body>
      
 @endsection

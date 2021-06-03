@@ -17,7 +17,8 @@ Route::get('/', function () {
 // インデックへのルート作成,/i_chingでコントローラーのindexの処理に渡す
 Route::get('/i_ching', 'i_chingController@index');
 
-Route::get('/result', 'i_chingController@result');
+
+Route::post('/result/{oracle?}', 'i_chingController@result');
 
 Route::get('/history', 'i_chingController@history');
 

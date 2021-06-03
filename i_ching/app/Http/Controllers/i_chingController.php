@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+
 use App\i_ching;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class i_chingController extends Controller
 {
@@ -14,18 +16,27 @@ class i_chingController extends Controller
      */
     public function index()
     {
+         
+    
         return view('i_ching.index');
-        $oracle=rand(1,384);
     }
+       
 // /historyにquesiton,time,結果noを送る
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function result(Request $hogehoge)
-    {
-        return view('i_ching.result');
+    public function result(Request $request)
+    {   
+        $msg = $request->question;
+        $id = $request->oracle;
+        $data =['question'=>'占い内容は'. $msg .'です',
+                'oracle'=>$id];
+
+        
+
+        return view('i_ching.result',$data);
     }
 // /oraclesから画像パス１画像パス２　テキスト１　/kojiからテキストデータを受け取る
     // * Show the form for creating a new resource.

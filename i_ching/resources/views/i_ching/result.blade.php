@@ -1,14 +1,11 @@
 
-@extends('layouts.layouts')
-
-@section('title', 'i_Ching')
-
-@section('content')
 
 
 
+<h1>{{$question}}</h1>
 
     <h1>結果ページ</h1>
+    <h1>お告げは{{$oracle}}</h1>
 
     <ul>
         <li>吉・・・・幸がある</li>
@@ -19,4 +16,3 @@
 
     </ul>
 
-@endsection
