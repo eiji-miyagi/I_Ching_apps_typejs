@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\i_ching;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
 
 class i_chingController extends Controller
 {
@@ -29,14 +30,15 @@ class i_chingController extends Controller
      */
     public function result(Request $request)
     {   
-        $msg = $request->question;
+        // $msg = $request->question;
         $id = $request->oracle;
-        $data =['question'=>'占い内容は'. $msg .'です',
-                'oracle'=>$id];
+        // $reslt = DB::table('oracles')->where('id',$id)->first();
+        $reslt = DB::table('koji')->where('id',$id)->first();
+        // $data =['question'=>'占い内容は'. $msg .'です',];
 
         
 
-        return view('i_ching.result',$data);
+        return view('i_ching.result',['reslt'=>$reslt],);
     }
 // /oraclesから画像パス１画像パス２　テキスト１　/kojiからテキストデータを受け取る
     // * Show the form for creating a new resource.

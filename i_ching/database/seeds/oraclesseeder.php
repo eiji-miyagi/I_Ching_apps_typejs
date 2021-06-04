@@ -18,9 +18,9 @@ class oraclesseeder extends Seeder
 
                 'keji_detail'=> '第１卦　乾、天の運行は剛健積極、一瞬もやむことがない。君子はこの卦象を見て、一瞬も気を緩めぬよう努め励むのである。',
 
-                'keji1_img_path'=> '/img/jpg/icon_hakke1',
+                'keji1_img_path'=> '/img/jpg/icon_hakke_1.jpg',
             
-                'keji2_img_path'=> '/img/jpg/icon_hakke1'
+                'keji2_img_path'=> '/img/jpg/icon_hakke_1.jpg'
 
             ],
             [
@@ -30,9 +30,9 @@ class oraclesseeder extends Seeder
 
                 'keji_detail'=> '第２卦　坤、大地の動き、これが坤である。君子はこの卦象を見て、徳を厚くして、万民を包容してゆく。',
 
-                'keji1_img_path'=> '/img/jpg/icon_hakke6',
+                'keji1_img_path'=> '/img/jpg/icon_hakke_6.jpg',
         
-                'keji2_img_path'=> '/img/jpg/icon_hakke6'
+                'keji2_img_path'=> '/img/jpg/icon_hakke_6.jpg'
 
         ],
         ]);

@@ -24,7 +24,7 @@
 
         <p>では、占うテーマを選んでボタンを押してください</p>
 
-        <form method="POST" action="/result/{{rand(1,384)}}">
+        <form method="POST" action="/result/{{rand(1,12)}}">
             @csrf
             <select name= 'question'class="form-control mb-2" required>
                 <option value="仕事">仕事</option>
