@@ -19,6 +19,7 @@ Route::get('/i_ching', 'i_chingController@index');
 
 
 Route::post('/result/{oracle?}', 'i_chingController@result');
+// Route::post('/result/{oracle?}', 'i_chingController@question');
 
 Route::get('/history', 'i_chingController@history');
 

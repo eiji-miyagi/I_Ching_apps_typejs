@@ -30,16 +30,32 @@ class i_chingController extends Controller
      */
     public function result(Request $request)
     {   
-        // $msg = $request->question;
+        $data = $request->question;
         $id = $request->oracle;
-        // $reslt = DB::table('oracles')->where('id',$id)->first();
+        
         $reslt = DB::table('koji')->where('id',$id)->first();
-        // $data =['question'=>'占い内容は'. $msg .'です',];
+        // $data =['question'=>'占い内容は'. $id .'です',];
+
+        // return view('i_ching.result',$msg,);
+
+        return view('i_ching.result',['reslt'=>$reslt],)->with(['i_ching.result','data'=>$data]);
+    }
+    // public function question(Request $request)
+    // {   
+    //     $msg = $request->question;
+        
+        
+        
+    //     $data =['question'=>'占い内容は'. $msg .'です',];
 
         
 
-        return view('i_ching.result',['reslt'=>$reslt],);
-    }
+    //     return view('i_ching.result',$data,);
+    // }
+
+
+
+
 // /oraclesから画像パス１画像パス２　テキスト１　/kojiからテキストデータを受け取る
     // * Show the form for creating a new resource.
     // *
