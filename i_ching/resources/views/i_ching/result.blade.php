@@ -1,12 +1,26 @@
+<head>
+<style>
+h1{font-size:16pt}
+h2{font-size:20px}
+img{width:200px}
+div{display: flex; flex-direction: column;align-items: center;}
+ul{font-size:8px;}
+</style>
+</head>
+<body>
+    <div>
+        <h1>{{$data}}についての占い</h1>
 
 
-
-<h1>{{$data}}</h1>
-
-
-    <h1>結果ページ</h1>
     
-    <p>{{$reslt->koji_datail}}</p>
+        <img src="{{$reslt->keji1_img_path}}" alt="">
+        <img src="{{$reslt->keji2_img_path}}" alt="">
+        <p>{{$reslt->keji_name}}</p>
+    </div>
+    
+    
+    <h2>{{$reslt->keji_detail}}</h2>
+    <h2>{{$reslt->koji_datail}}</h2>
 
     <ul>
         <li>吉・・・・幸がある</li>
@@ -16,4 +30,5 @@
         <li>咎なし・・欠点はあっても人に咎めを受けるようなことはない</li>
 
     </ul>
+</body>
     

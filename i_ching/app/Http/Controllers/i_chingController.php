@@ -30,30 +30,23 @@ class i_chingController extends Controller
      */
     public function result(Request $request)
     {   
+        // indexで選択した質問を定義
         $data = $request->question;
+        
+
         $id = $request->oracle;
         
-        $reslt = DB::table('koji')->where('id',$id)->first();
-        // $data =['question'=>'占い内容は'. $id .'です',];
+        $reslt = DB::table('koji')
+        ->where('id',$id)
+        ->join('oracles','koji.oracles_id','=','oracles.oracles_id')
+        
+        ->first();
 
-        // return view('i_ching.result',$msg,);
-
-        return view('i_ching.result',['reslt'=>$reslt],)->with(['i_ching.result','data'=>$data]);
+      return view('i_ching.result',['reslt'=>$reslt],)
+        ->with('data',$data);
     }
-    // public function question(Request $request)
-    // {   
-    //     $msg = $request->question;
-        
-        
-        
-    //     $data =['question'=>'占い内容は'. $msg .'です',];
-
-        
-
-    //     return view('i_ching.result',$data,);
-    // }
-
-
+    
+  // 
 
 
 // /oraclesから画像パス１画像パス２　テキスト１　/kojiからテキストデータを受け取る
