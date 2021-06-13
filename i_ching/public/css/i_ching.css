@@ -1,0 +1,26 @@
+
+h1{font-size:16pt}
+h2{font-size:20px}
+img{width:200px;}
+div{display: flex; flex-direction: column;align-items: center;}
+ul{font-size:8px;}
+
+.title{ margin-bottom:30px;align-items: center;}
+.from-area{display: flex;flex-direction: column; align-items: center;}
+.caveat{color: red;}
+.btn--yellow {
+    color: #000;
+    background-color: #fff100;
+    border-bottom: 5px solid #ccc100;
+}
+  
+.btn--yellow:hover {
+    margin-top: 3px;
+    color: #000;
+    background: #fff20a;
+    border-bottom: 2px solid #ccc100;
+}
+
+.font_oracle {
+    font-family:  serif;
+}

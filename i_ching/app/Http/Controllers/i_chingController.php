@@ -35,7 +35,7 @@ class i_chingController extends Controller
         
 
         $id = $request->oracle;
-        
+        // データベースkojiとoraclesのテーブルを内部結合して＄resltへ入れる
         $reslt = DB::table('koji')
         ->where('id',$id)
         ->join('oracles','koji.oracles_id','=','oracles.oracles_id')
@@ -46,14 +46,7 @@ class i_chingController extends Controller
         ->with('data',$data);
     }
     
-  // 
-
-
-// /oraclesから画像パス１画像パス２　テキスト１　/kojiからテキストデータを受け取る
-    // * Show the form for creating a new resource.
-    // *
-    // * @return \Illuminate\Http\Response
-    // */
+  
    public function history()
    {
         return view('i_ching.history');
@@ -70,48 +63,7 @@ class i_chingController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\i_ching  $i_ching
-     * @return \Illuminate\Http\Response
-     */
-    public function show(i_ching $i_ching)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\i_ching  $i_ching
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(i_ching $i_ching)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\i_ching  $i_ching
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, i_ching $i_ching)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\i_ching  $i_ching
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(i_ching $i_ching)
-    {
-        //
-    }
+  
+   
+    
 }
