@@ -15,11 +15,11 @@ class i_chingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function i_ching()
     {
          
     
-        return view('i_ching.index');
+        return view('i_ching.i_ching');
     }
        
 // /historyにquesiton,time,結果noを送る
@@ -30,38 +30,52 @@ class i_chingController extends Controller
      */
     public function result(Request $request)
     {   
-        // indexで選択した質問を定義
+        // i_chingで選択した質問を取得
         $data = $request->question;
         
-
         $id = $request->oracle;
         // データベースkojiとoraclesのテーブルを内部結合して＄resltへ入れる
         $reslt = DB::table('koji')
         ->where('id',$id)
         ->join('oracles','koji.oracles_id','=','oracles.oracles_id')
-        
         ->first();
+        // ヒストリーテーブルに占った履歴をパラメーターに変換して記録
 
-      return view('i_ching.result',['reslt'=>$reslt],)
+        $param = [
+            'question'=>$request->question,
+            'koji_no'=>$request->oracle
+        ];
+
+        DB::table('hisory_tab')->insert($param);
+        return view('i_ching.result',['reslt'=>$reslt],)
         ->with('data',$data);
     }
     
   
-   public function history()
-   {
-        return view('i_ching.history');
+   public function history(){
+     //     ヒストリーテーブルから最新５０件を抽出
+       $historys = DB::table('hisory_tab')->orderBy('id','desc')->limit(50)->get();
+
+        return view('i_ching.history',['historys'=>$historys],);
    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+   public function show(Request $request)
+   {   
+       
+       $data = '以前の質問';
+       
+       $id = $request->oracle;
+       // データベースkojiとoraclesのテーブルを内部結合して＄resltへ入れる
+       $reslt = DB::table('koji')
+       ->where('id',$id)
+       ->join('oracles','koji.oracles_id','=','oracles.oracles_id')
+       ->first();
+      
+       
+
+       return view('i_ching.result',['reslt'=>$reslt],)
+       ->with('data',$data);
+   }
 
   
    

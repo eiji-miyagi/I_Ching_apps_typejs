@@ -14,9 +14,8 @@ class HistoryTbl extends Migration
     public function up()
     {
         Schema::create('history_tbl', function (Blueprint $table) {
-            $table->id();
+            $table->id_h();
             $table->text('question');
-            $table->text('keji_no');
             $table->text('koji_no');
             $table->timestamps('create_date');
         });

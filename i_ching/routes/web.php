@@ -15,11 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 // インデックへのルート作成,/i_chingでコントローラーのindexの処理に渡す
-Route::get('/i_ching', 'i_chingController@index');
+Route::get('/i_ching', 'i_chingController@i_ching');
 
 
 Route::post('/result/{oracle?}', 'i_chingController@result');
-
+Route::get('/result/{oracle?}', 'i_chingController@result');
+Route::get('/show/{oracle?}', 'i_chingController@show');
 
 Route::get('/history', 'i_chingController@history');
 

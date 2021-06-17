@@ -24,3 +24,13 @@ ul{font-size:8px;}
 .font_oracle {
     font-family:  serif;
 }
+
+.log{
+    font-family:  serif;
+    float: left;
+
+}
+
+.history_title{
+    font-size:30px;
+    margin:30px;}

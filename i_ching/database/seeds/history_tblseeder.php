@@ -11,6 +11,13 @@ class history_tblseeder extends Seeder
      */
     public function run()
     {
-        //
-    }
+        DB::table('history_tbl')->insert([
+              'id_h'=>'2'
+                'question'=>'テスト'
+                'koji_no'=>'380'
+                'create_date'=>'0'
+
+            ],
+        );
+
 }
