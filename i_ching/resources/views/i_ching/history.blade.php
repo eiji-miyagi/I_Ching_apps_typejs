@@ -10,13 +10,7 @@
         
         @foreach($historys as $history)
             <div class=log_line>
-                
-
-       
                 <h1>{{$history->question}}について</h1>
-            
-                
-                
                 <a href="show/{{$history->koji_no}}">結果</a>
                 
             </div>
