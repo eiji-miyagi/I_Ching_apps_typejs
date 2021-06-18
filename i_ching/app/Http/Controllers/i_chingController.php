@@ -46,7 +46,7 @@ class i_chingController extends Controller
             'koji_no'=>$request->oracle
         ];
 
-        DB::table('hisory_tab')->insert($param);
+        DB::table('history_tab')->insert($param);
         return view('i_ching.result',['reslt'=>$reslt],)
         ->with('data',$data);
     }
@@ -54,14 +54,14 @@ class i_chingController extends Controller
   
    public function history(){
      //     ヒストリーテーブルから最新５０件を抽出
-       $historys = DB::table('hisory_tab')->orderBy('id','desc')->limit(50)->get();
+       $historys = DB::table('history_tab')->orderBy('id','desc')->limit(50)->get();
 
         return view('i_ching.history',['historys'=>$historys],);
    }
 
    public function show(Request $request)
    {   
-       
+    //   履歴ページからの出力コントローラー、こちらでは履歴が残らない 
        $data = '以前の質問';
        
        $id = $request->oracle;

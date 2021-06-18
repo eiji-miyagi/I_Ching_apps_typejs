@@ -3,7 +3,8 @@
     <html lang="ja">
   
     <head>
-        <title>@yield('title')</title>
+        <title>@yield('i_ching')</title>
+        <meta charset="utf-8">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ asset('css/i_ching.css') }}" rel="stylesheet">

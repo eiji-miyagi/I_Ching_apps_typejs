@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 // インデックへのルート作成,/i_chingでコントローラーのindexの処理に渡す
 Route::get('/i_ching', 'i_chingController@i_ching');
 
