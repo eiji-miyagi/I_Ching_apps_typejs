@@ -30,7 +30,7 @@ ul{font-size:8px;}
     float: left;
     padding: 2.5% 0;
     display: flex;
-    flex-direction: column-reverse;
+    /* flex-direction: column-reverse; */
     
 
 }

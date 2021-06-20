@@ -53,9 +53,10 @@ class i_chingController extends Controller
     
   
    public function history(){
-     //     ヒストリーテーブルから最新５０件を抽出
-       $historys = DB::table('history_tab')->orderBy('id','desc')->limit(50)->get();
-
+     //     ヒストリーテーブルから抽出
+       $historys = DB::table('history_tab')->orderBy('history_id','desc')->limit(50)->get();
+       
+       
         return view('i_ching.history',['historys'=>$historys],);
    }
 
